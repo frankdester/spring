@@ -9,10 +9,12 @@ public class MainBankApp {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bankFile.xml");
 
         //retrieve bean from spring container
-        Bank ParisHSBC = context.getBean("ParisHSBC Bank", Bank.class);
-        Bank ShanghaiHSBC = context.getBean("ShanghaiHSBC Bank", Bank.class);
+        Bank parisHSBCBank = context.getBean("ParisHSBC Bank", Bank.class);
+        Bank shanghaiHSBCBank = context.getBean("ShanghaiHSBC Bank", Bank.class);
 
         //call methods on bean
+
+
             //view available clients in ParisHSBC in each branch
 
 
