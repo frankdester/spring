@@ -10,4 +10,10 @@
 
     <bean id="myCoach" class="com.spring.TrackCoach"/>
 
+<!--    logging messages details-->
+    <bean id="myLoggerConfig" class="com.spring.MyLoggerConfig" init-method="initLogger">
+        <property name="rootLoggerLevel" value="FINE" />
+        <property name="printedLoggerLevel" value="FINE"/>
+    </bean>
+
 </beans>

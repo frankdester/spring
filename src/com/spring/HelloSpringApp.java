@@ -13,5 +13,8 @@ public class HelloSpringApp {
 
         //call the method on the bean
         System.out.println(theCoach.getDailyWorkout());
+
+        //close context
+        context.close();
     }
 }
