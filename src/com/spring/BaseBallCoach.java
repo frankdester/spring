@@ -7,15 +7,19 @@ public class BaseBallCoach implements Coach {
     public BaseBallCoach(FortuneService fortuneService){
         this.fortuneService = fortuneService;
     }
-
     @Override
     public String getDailyFortune() {
         //dependency injection
         return this.fortuneService.getFortune();
     }
-
     @Override
     public String getDailyWorkout(){
         return "you should play batting for 30 minutes";
+    }
+    public void openMethod(){
+        System.out.println("Merhaba");
+    }
+    public void closeMethod(){
+        System.out.println("Gule Gule");
     }
 }
