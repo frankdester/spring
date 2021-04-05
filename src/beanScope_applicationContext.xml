@@ -8,21 +8,14 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--    importing our sport file-->
     <context:property-placeholder location="classpath:sport.properties"/>
 <!--    define the dependency myFortuneService-->
     <bean id="myFortuneService" class="com.spring.HappyFortuneServices"/>
 <!--    inject the dependency myFortuneService using constructor-->
-    <bean id="myCoach" class="com.spring.BaseBallCoach"> <constructor-arg ref="myFortuneService"/></bean>
+    <bean id="myCoach" class="com.spring.BaseBallCoach" scope="prototype">
+        <constructor-arg ref="myFortuneService"/>
 
-    <bean id="myCricketCoach" class="com.spring.CricketCoach">
-        <!--    inject the dependency myFortuneService using setting-->
-        <property name="fortuneService" ref="myFortuneService"/>
-        <!--    inject the dependency myFortuneService using literal values-->
-        <property name="email" value="${load.email}"/>
-        <property name="team" value="${load.team}"/>
     </bean>
-
 
 <!--    logging messages details-->
     <bean id="myLoggerConfig" class="com.spring.MyLoggerConfig" init-method="initLogger">
