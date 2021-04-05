@@ -12,8 +12,14 @@
     <bean id="myFortuneService" class="com.spring.HappyFortuneServices"/>
 <!--    inject the dependency myFortuneService using constructor-->
     <bean id="myCoach" class="com.spring.BaseBallCoach"> <constructor-arg ref="myFortuneService"/></bean>
-<!--    inject the dependency myFortuneService using setting-->
-    <bean id="myCricketCoach" class="com.spring.CricketCoach"> <property name="fortuneService" ref="myFortuneService"/></bean>
+
+    <bean id="myCricketCoach" class="com.spring.CricketCoach">
+        <!--    inject the dependency myFortuneService using setting-->
+        <property name="fortuneService" ref="myFortuneService"/>
+        <!--    inject the dependency myFortuneService using literal values-->
+        <property name="email" value="frank@gmail.com"/>
+        <property name="team" value="Scorpions"/>
+    </bean>
 
 
 <!--    logging messages details-->

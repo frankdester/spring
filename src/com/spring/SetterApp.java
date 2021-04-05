@@ -5,10 +5,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class SetterApp {
     public static void main(String[] args) {
         //load spring configuration file
-        ClassPathXmlApplicationContext con = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         //retrieve bean from spring container
-        Coach theCoach = con.getBean("myCricketCoach",Coach.class);
+        CricketCoach theCoach = context.getBean("myCricketCoach",CricketCoach.class);
 
         //call the method on the bean
         System.out.println(theCoach.getDailyWorkout());
@@ -16,7 +16,11 @@ public class SetterApp {
         //call method for fortune
         System.out.println(theCoach.getDailyFortune());
 
+        //call get methods
+        System.out.println(theCoach.getEmail());
+        System.out.println(theCoach.getTeam());
+
         //close context
-        con.close();
+        context.close();
     }
 }
