@@ -8,6 +8,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:sport.properties"/>
 <!--    define the dependency myFortuneService-->
     <bean id="myFortuneService" class="com.spring.HappyFortuneServices"/>
 <!--    inject the dependency myFortuneService using constructor-->
@@ -17,8 +18,8 @@
         <!--    inject the dependency myFortuneService using setting-->
         <property name="fortuneService" ref="myFortuneService"/>
         <!--    inject the dependency myFortuneService using literal values-->
-        <property name="email" value="frank@gmail.com"/>
-        <property name="team" value="Scorpions"/>
+        <property name="email" value="${foo.email}"/>
+        <property name="team" value="${foo.team}"/>
     </bean>
 
 
