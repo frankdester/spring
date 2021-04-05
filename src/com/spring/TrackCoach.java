@@ -1,10 +1,19 @@
 package com.spring;
 
 public class TrackCoach implements Coach {
+    private FortuneService fortuneService;
+
+    public TrackCoach(){
+
+    }
+    //creating a constructor in my class for injection
+    public TrackCoach(FortuneService fortuneService){
+        this.fortuneService = fortuneService;
+    }
 
     @Override
     public String getDailyFortune() {
-        return null;
+        return this.fortuneService.getFortune();
     }
 
     @Override
