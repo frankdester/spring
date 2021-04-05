@@ -9,7 +9,7 @@ public class BeanLifeCycle {
                 new ClassPathXmlApplicationContext("beanLifeCycle_applicationContext.xml");
 
         //retrieve bean from spring container
-        Coach theCoach = context.getBean("myCoach",Coach.class);
+        Coach theCoach = context.getBean("myTrackCoach",Coach.class);
 
         //call the method on the bean
         System.out.println(theCoach.getDailyWorkout());

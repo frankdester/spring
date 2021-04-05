@@ -1,6 +1,8 @@
 package com.spring;
 
-public class TrackCoach implements Coach {
+import org.springframework.beans.factory.DisposableBean;
+
+public class TrackCoach implements Coach, DisposableBean {
     private FortuneService fortuneService;
 
     public TrackCoach(){
@@ -19,5 +21,12 @@ public class TrackCoach implements Coach {
     @Override
     public String getDailyWorkout(){
         return "you should run for 5K";
+    }
+    public void openMethod(){
+        System.out.println("Merhaba");
+    }
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("destroyer!!!");
     }
 }
