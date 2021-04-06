@@ -11,6 +11,14 @@ public class ParisBank implements Bank {
         this.branches = new ArrayList<ParisBranch>(); // to instantiate (new branch)
 
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return this.name;
+    }
+
     public ParisBank(){
         System.out.println("ParisBank");
     }

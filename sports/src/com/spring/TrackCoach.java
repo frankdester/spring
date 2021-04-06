@@ -2,7 +2,7 @@ package com.spring;
 
 import org.springframework.beans.factory.DisposableBean;
 
-public class TrackCoach implements Coach, DisposableBean {
+public class TrackCoach implements Coach{
     private FortuneService fortuneService;
 
     public TrackCoach(){
@@ -25,8 +25,10 @@ public class TrackCoach implements Coach, DisposableBean {
     public void openMethod(){
         System.out.println("Merhaba");
     }
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("destroyer!!!");
+    public void closeMethod(){
+        System.out.println("Gule Gule");
     }
+
+
+
 }

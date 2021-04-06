@@ -10,13 +10,13 @@
 
 <!--    define the dependency myFortuneService-->
     <bean id="myFortuneService" class="com.spring.HappyFortuneServices"/>
-<!--    inject the dependency myFortuneService using constructor-->
-<!--    <bean id="myCoach" class="com.spring.BaseBallCoach" scope="singleton"-->
-<!--          init-method="openMethod" destroy-method="closeMethod">-->
-<!--        <constructor-arg ref="myFortuneService"/>-->
-<!--    </bean>-->
 
-    <bean id="myTrackCoach" class="com.spring.TrackCoach" scope="prototype" init-method="openMethod">
+    <bean id="myBaseBallCoach" class="com.spring.BaseBallCoach" scope="prototype"
+         >
+        <constructor-arg ref="myFortuneService"/>
+    </bean>
+
+    <bean id="myTrackCoach" class="com.spring.TrackCoach" scope="singleton"  init-method="openMethod" destroy-method="closeMethod">
         <constructor-arg ref="myFortuneService"/>
 
     </bean>

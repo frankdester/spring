@@ -1,6 +1,8 @@
 package com.spring;
 
-public class BaseBallCoach implements Coach {
+import org.springframework.beans.factory.DisposableBean;
+
+public class BaseBallCoach implements Coach, DisposableBean {
     private FortuneService fortuneService;
 
     //creating a constructor in my class for injection
@@ -16,10 +18,8 @@ public class BaseBallCoach implements Coach {
     public String getDailyWorkout(){
         return "you should play batting for 30 minutes";
     }
-    public void openMethod(){
-        System.out.println("Merhaba");
-    }
-    public void closeMethod(){
-        System.out.println("Gule Gule");
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("destroyer!!!");
     }
 }

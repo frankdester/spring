@@ -2,7 +2,7 @@ package com.spring.bank;
 
 import java.util.ArrayList;
 
-public class ParisBranch implements Branch {
+public class ParisBranch {
     private final String name;
     private final ArrayList<Customer> customers;
 
@@ -10,10 +10,11 @@ public class ParisBranch implements Branch {
         this.name = name;
         this.customers = new ArrayList<Customer>();
     }
-    @Override
-    public String getName(){
+
+    public String getName() {
         return name;
     }
+
     public ArrayList<Customer> getCustomers(){
         return this.customers;
     }

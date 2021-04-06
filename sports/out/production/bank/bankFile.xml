@@ -8,21 +8,23 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--    importing our sport file-->
+    <!--    importing our parisBank file-->
+    <context:property-placeholder location="classpath:parisBankCustomer"/>
 
-    <!--    define the dependency myFortuneService-->
+    <bean id="ParisHSBCBank" class="com.spring.bank.ParisBank" scope="prototype">
+        <!--    inject the dependency myFortuneService using constructor-->
+        <property name="name" value="${load.name}"/>
+    </bean>
+    <bean id="ShanghaiHSBCBank" class="com.spring.bank.ShanghaiBank" scope="prototype">
 
-    <bean id="ParisHSBC" class="com.spring.bank.ParisBank" scope="prototype">
-        <!--    inject the dependency myFortuneService using constructor-->
     </bean>
-    <bean id="ShanghaiHSBC" class="com.spring.bank.ShanghaiBank" scope="prototype">
-        <!--    inject the dependency myFortuneService using constructor-->
-    </bean>
+
 
     <!--    logging messages details-->
     <bean id="myLoggerConfig" class="com.spring.bank.MyLoggerConfig" init-method="initLogger">
         <property name="rootLoggerLevel" value="FINE" />
         <property name="printedLoggerLevel" value="FINE"/>
     </bean>
+
 
 </beans>

@@ -37,9 +37,15 @@ public class ShanghaiBank implements Bank {
         }
         return false;
     }
+
+    @Override
+    public String getName() {
+        return null;
+    }
+
     private ParisBranch findBranch(String nameOfBranch){
         for (ParisBranch branch : this.branches) {
-            if (branch.getName().equals(nameOfBranch)) {
+            if (branch.equals(nameOfBranch)) {
                 return branch;
             }
         }
